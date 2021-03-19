@@ -133,5 +133,5 @@ document.querySelector('.card-container').addEventListener('click', e => {
 
 //make cancel button(modal) functional 
 document.querySelector('.cancel-btn').addEventListener('click', e=>{
-    location.reload();
+    document.querySelector('.overlay').style.display = 'none';
 })
