@@ -48,43 +48,48 @@
 <!----modal=screen that pops up to add books-->
 <div class="overlay">
     <div class="modal">
+        
         <div class="modal-header">
             <h3 class="modal-heading">Input: Book Info</h3>
         </div>
-        <div class="modal-content">
+
+        <div class="modal-content"> 
+
             <label class="custom-field">
-                <input type="text" class="titleInput" required>
+                <input type="text" class="titleInput" id="title" required/>
                 <span class="placeholder">Title</span>
             </label>
             <label class="custom-field">
-                <input type="text" class="authorInput" required>
+                <input type="text" class="authorInput" id="text" required>
                 <span class="placeholder">Author</span>
             </label>
-
             <label class="custom-field">
-                <input type="text" class="genreInput" required>
+                <input type="text" class="genreInput" id="genre" required>
                 <span class="placeholder">Genre</span>
             </label>
             <label class="custom-field">
-                <input type="text" class="pagesInput" required>
+                <input type="number" class="pagesInput" id="pages" min="1" required>
                 <span class="placeholder">Pages</span>
             </label>
-
             <div class="modal-status">
                 <input type="checkbox" id="read-state">
                 <label for="read-state">Read</label>
-            </div>  
+            </div>
+                
         </div>
 
         <div class="modal-footer">
-            <div class="button cancel-btn" style="color:white; background-color: red;">
+
+            <div class="button cancel-btn" style="color:white; background-color:red;">
                 <p class="cancel">Cancel</p>
             </div>
+
             <div class="button confirm-add-btn" id="add-btn-modal">
                 <p class="add-book">Add Book</p>
             </div>
-        </div>
 
+        </div>
+        
     </div>
 
 </div>

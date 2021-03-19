@@ -106,6 +106,10 @@ document.getElementById('add-btn-modal').addEventListener('click', () => {
     const genre = document.querySelector('.genreInput').value;
     const pages = document.querySelector('.pagesInput').value;
     
+    //validate input fields
+    if (title===''||author===''||genre===''||pages===''){
+        alert ('Uh oh! Please fill in all fields')
+    }else{
 
     // instantiate new book
     const book = new Book(title, author, genre, pages);
@@ -117,12 +121,14 @@ document.getElementById('add-btn-modal').addEventListener('click', () => {
     UI.dismissModal();
 
     // dismiss default state
-    UI.hideDefaultState();
+    UI.hideDefaultState(); 
+    }
+   
 });
 
 // remove book
 document.querySelector('.card-container').addEventListener('click', e => {
-    // remove book
+    // remove book 
     UI.removeBook(e.target);
 
     //null state if there are no books
@@ -135,3 +141,4 @@ document.querySelector('.card-container').addEventListener('click', e => {
 document.querySelector('.cancel-btn').addEventListener('click', e=>{
     document.querySelector('.overlay').style.display = 'none';
 })
+
