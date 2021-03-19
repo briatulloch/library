@@ -125,9 +125,13 @@ document.querySelector('.card-container').addEventListener('click', e => {
     // remove book
     UI.removeBook(e.target);
 
-    // display null state if there are no books
+    //null state if there are no books
     if (document.querySelector('.card-container').hasChildNodes == false) {
         document.querySelector('.default-state').style.display = 'block';
     }
 })
 
+//make cancel button(modal) functional 
+document.querySelector('.cancel-btn').addEventListener('click', e=>{
+    location.reload();
+})
