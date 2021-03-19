@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Library App</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <div class="nav">
+                
+                <h1>Mini Library</h1>
+                <img src="images/book.png" alt="A book logo" height="90px" width="90px">
+                <!--This is the button to be displayed on page with book cards-->
+                <div class="button add-btn" id="add-btn-main">
+                <p class="new-book">ADD BOOK</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<main class="main">
+
+    <div class="default-state">
+        <h2 class="default-header">Oh no! You haven't added any books </h2>
+        <p class="default-subtext"><i>Add some books so you can track them here!</i></p>
+        <!--This is the button on initial display page-->
+        <div class="button add-btn" id="add-btn-default">
+            <p class="new-book"> <b>ADD BOOK</b></p>
+        </div>
+    </div>
+
+     <!--div reference to add javascript which will display book info on cards-->
+     <div class="card-container" id="card-container"></div>
+
+</main>
+
+<!----modal=screen that pops up to add books-->
+<div class="overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-heading">Input: Book Info</h3>
+        </div>
+        <div class="modal-content">
+            <label class="custom-field">
+                <input type="text" class="titleInput" required>
+                <span class="placeholder">Title</span>
+            </label>
+            <label class="custom-field">
+                <input type="text" class="authorInput" required>
+                <span class="placeholder">Author</span>
+            </label>
+
+            <label class="custom-field">
+                <input type="text" class="genreInput" required>
+                <span class="placeholder">Genre</span>
+            </label>
+            <label class="custom-field">
+                <input type="text" class="pagesInput" required>
+                <span class="placeholder">Pages</span>
+            </label>
+
+            <div class="modal-status">
+                <input type="checkbox" id="read-state">
+                <label for="read-state">Read</label>
+            </div>  
+        </div>
+
+        <div class="modal-footer">
+            <div class="button cancel-btn" style="color:white; background-color: red;">
+                <p class="cancel">Cancel</p>
+            </div>
+            <div class="button confirm-add-btn" id="add-btn-modal">
+                <p class="add-book">Add Book</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+
+
+</html>

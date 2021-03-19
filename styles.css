@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+/* h1 font */
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    /* border-box keeps title, author etc. input fields within the box for modal display*/
+    box-sizing: border-box;
+}
+
+html{  
+    font-size:10px;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    margin: 0 auto; 
+    margin-bottom: 80px;
+    background:rgb(119, 20, 20);
+    padding: 40px;   
+}
+
+/* header */
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5px;
+} 
+.nav h1{
+    font-size: 75px;
+    font-family: 'Redressed', cursive;
+    color: white;     
+}
+.button{
+    margin-right: 2px;
+    background-color: rgb(0, 0, 32);
+    color: white;
+    padding: 1.4rem 2.2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 4px;
+    display: inline-block;
+}
+.button:hover{
+    cursor: pointer;
+}
+
+.new-book::before{
+    content: '+';
+   /*adds plus to 'add book' button */
+    margin-right: 8px;
+    font-size: 10px;
+}
+
+/* default=initial display page */
+.default-state{
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.default-state::before{
+    content: url(https://media.giphy.com/media/LOcDU7Y6KBYTbG6eqd/giphy.gif);
+    display: block;   
+     
+}
+.default-header{
+    font-size: 22px;
+    color: rgb(75, 73, 73);
+    margin-bottom: 1.2rem;
+    margin-top: 20px;
+    font-family: "Gill Sans", sans-serif;
+}
+.default-subtext{
+    font-size: 20px;
+    color: #5f5e5e;
+    margin: auto;
+    margin-bottom: 4.5rem;
+    width: 35rem;
+    line-height: 2.4rem;
+    font-family: "Gill Sans", sans-serif;
+}
+#add-btn-default{
+    padding-left: 235px;
+    padding-right: 235px;
+    background-color: rgb(85, 12, 12);
+}
+
+/* main=book display cards */
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.card{
+    position: relative;
+    width: 24.4rem;
+    height: 32rem;
+    border-radius: 30px;
+    padding: 3rem;
+    margin: 1.2rem; /*creates space between cards*/
+    background-color: #F3F3F4;
+}
+/*modal*/
+.read, .modal-status{
+    margin-bottom: 1.4rem;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(211, 213, 218);
+}
+input[type='checkbox']{
+    appearance: none;
+    background-color: rgb(211, 213, 218);
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 6px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input[type='checkbox']::after{
+    content: '\f00c';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: hsl(216, 2%, 60%);
+    font-size: 1.2rem;
+    margin-left: 1px;
+    display: none;
+}
+input[type='checkbox']:checked::after{
+    display: block;
+}
+label{
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: rgb(179, 180, 184);
+    cursor: pointer;
+}
+.modal-status{
+    border: none;
+    margin-top: 3rem;
+}
+.modal input[type='checkbox']{
+    appearance: none;
+    background-color: #ddd;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal label{
+    font-size: 1.6rem;
+    color: black;
+}
+.modal input[type='checkbox']::after{
+    color: black;
+}
+.title{
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: .5px;
+    color: rgb(48, 49, 51);
+}
+.title::after{
+    content: '__';
+    display: block;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: rgb(48, 49, 51);
+}
+.author{
+    margin-top: 60px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .5px; 
+    color: rgb(48, 49, 51);
+}
+.genre{
+    margin-top: 40px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .5px; 
+    color: rgb(48, 49, 51);
+}
+
+.footer{
+    width: 18.4rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    font-weight: 400;
+    position: absolute;
+    bottom: 3rem;
+    color: rgb(48, 49, 51);
+}
+.remove{
+    text-decoration: underline;
+}
+.remove:hover{
+    cursor: pointer;
+}
+
+/* modal */
+.overlay{
+    display: none; 
+    background-image:url(images/bookshelf.jpg); 
+    filter: grayscale(70%);
+    /*filters background image with greyish tint*/
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 2rem;
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 50rem;
+    padding: 3rem;
+    border-radius: 6px;
+}
+.modal-content{
+    margin-bottom: 2rem;
+}
+.modal-heading{
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    font-family: 'Redressed', cursive;
+}
+.custom-field{
+    display: block;
+    position: relative;
+    font-size: 1.4rem;
+    padding-top: 2rem;
+    margin: 2rem 0;
+}
+input[type='text']{
+    outline: none;
+    appearance: none;
+    width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: none;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+input[type='text'] + .placeholder{
+    position: absolute;
+    font-size: 1.6rem;
+    color: #a3a6ae;
+    left: 14px;
+    top: 50%;
+    transition: 
+        top 0.3s ease,
+        color 0.3s ease,
+        font-size 0.3s ease;
+}
+input:focus + .placeholder, input:valid + .placeholder{
+    top: 1.4rem;
+    font-size: 1.2rem;
+    background: white;
+    padding: 0 6px;
+    margin-left: -3px;
+}
+input:valid + .placeholder{
+    color: rgb(48, 49, 51);
+}
+input:focus + .placeholder{
+    color: rgb(93, 158, 255);
+}
+input:valid{
+    border-color: #222;
+    transition-delay: 0.2s
+}
+input:focus{
+    border-color: rgb(93, 158, 255);
+    transition-delay: 0.2s
+}
+.modal-footer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.modal-footer .button{
+    padding: 1.4rem 2.2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 4px;
+}
+.cancel-btn{
+    margin-right: 1rem;
+    background-color: #F3F3F4;
+    color: rgb(48, 49, 51);
+}
+
+#add-btn-main{ 
+    display: none;
+    /* so it doesn't show on inital display page*/
+    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 150px;
+        
+}
+
+
+
